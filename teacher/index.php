@@ -3,7 +3,7 @@
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uk">
     <?php require '../shared/head.php'?>
     <body>
         <?php require '../shared/navbar.php'?>

@@ -25,7 +25,11 @@
 
 .map {
     width:  100%;
-    height: 400px;
+    height: 600px;
+}
+
+.nav-right {
+    margin-right: 40px;
 }
 
 
@@ -47,5 +51,9 @@
 
     .navbar-brand {
         margin-left:  10px;
+    }
+
+    .dropdown-menu {
+        left:  -100px;
     }
 }

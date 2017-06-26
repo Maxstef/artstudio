@@ -65,12 +65,5 @@ $result = $conn->query($sql);
         <?php require '../../shared/footer.php'?>
         
         <?php require '../../shared/scripts.php'?>
-        <script>
-            function confirmDeletePost(e, title){
-                if(!confirm('Ви впевнeні що хочете видалити новину ' + title)){
-                    e.preventDefault();
-                }
-            }
-        </script>
     </body>
 </html>

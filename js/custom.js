@@ -88,9 +88,6 @@ function publish(id){
 }
 
 function confirmDeletePost(e, title){
-    alert('hell');
-    e.preventDefault();
-    confirm('Ви впевнeні що хочете видалити новину ' + title);
     if(!confirm('Ви впевнeні що хочете видалити новину ' + title)){
         e.preventDefault();
     }

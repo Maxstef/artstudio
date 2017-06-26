@@ -12,7 +12,7 @@
             <h4>м. Чернівці, вул. Тихоріцька 22</h4>
             <div id="map" class="map"></div>
         </div>
-        
+        <?php require '../shared/footer.php'?>
         <?php require '../shared/scripts.php'?>
         <script>
             function myMap() {

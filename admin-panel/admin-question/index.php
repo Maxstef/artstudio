@@ -14,7 +14,11 @@ if(!is_loged_in()){
     <?php require '../../shared/head.php'?>
     <body>
         <?php require '../shared/admin-navbar.php';?>
-        question
+        <div class="container">
+            question
+        </div>
+        <?php require '../../shared/footer.php'?>
+        
         <?php require '../../shared/scripts.php'?>
     </body>
 </html>

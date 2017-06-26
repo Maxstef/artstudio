@@ -45,7 +45,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST' && !isset($_POST['new-email'])){
         $error_with_send_mail = "Виникла помилка при відправленні email";
     }
     
-}*/ else {
+} else {
     $conn = connect_to_db();     
     $sql = "SELECT * FROM admin";
     $result = $conn->query($sql);
@@ -59,7 +59,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST' && !isset($_POST['new-email'])){
             }
         }
     }
-}
+}*/
 
 ?>
 
@@ -70,14 +70,14 @@ if($_SERVER['REQUEST_METHOD'] === 'POST' && !isset($_POST['new-email'])){
         <?php require '../shared/navbar.php'?>
         <div class='container'>
             
-            <!--<?php if(isset($no_admin)){
+            <?php if(isset($no_admin)){
                 echo "<p class='text-center alert alert-danger'>Жодного адміна не було додано</p>
                 <form action='' method='post'><div class='form-group'><label for='new-email'>Email</label>  
                 <input class='form-control' name='new-email' id='new-email' placeholder='email...'></div> <button type='submit' class='btn btn-primary'>
                 Додати</button></form>";
-            }?>
-            <?php if(isset($error_with_send_mail)){echo "<p class='alert alert-danger'>$error_with_send_mail</p>";}?>
-            <?php if(isset($new_admin_success)){echo "<p class='alert alert-success'>$new_admin_success</p>";}?>-->
+            }
+            if(isset($error_with_send_mail)){echo "<p class='alert alert-danger'>$error_with_send_mail</p>";}
+            if(isset($new_admin_success)){echo "<p class='alert alert-success'>$new_admin_success</p>";}?>
             <div class="container login-form-container">
                 <form action="" method="post" class="login-form">
                     <div class="form-group">
@@ -94,7 +94,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST' && !isset($_POST['new-email'])){
             </div>
         </div>
         
-        
+        <?php require '../shared/footer.php'?>
         <?php require '../shared/scripts.php'?>
     </body>
 </html>

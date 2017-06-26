@@ -10,17 +10,17 @@
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto nav-height">
-                <li class="nav-item <?php if($route == '/admin-panel/add-news'){echo 'active';}?>">         
-                    <a class="nav-link" href="<?php if($route == '/admin-panel/'){echo './add-news';} else {echo '../add-news';}?>">Додати новину</a>
+                <li class="nav-item <?php if($route == '/admin-panel/news'){echo 'active';}?>">         
+                    <a class="nav-link" href="<?php if($route == '/admin-panel/'){echo './news';} else {echo '../news';}?>">Новини</a>
                 </li>
-                <li class="nav-item <?php if($route == '/admin-panel/add-gallery'){echo 'active';}?>">
-                    <a class="nav-link" href="<?php if($route == '/admin-panel/'){echo './add-gallery';} else {echo '../add-gallery';}?>">Додати фотогалерею</a>
+                <li class="nav-item <?php if($route == '/admin-panel/photo-gallery'){echo 'active';}?>">
+                    <a class="nav-link" href="<?php if($route == '/admin-panel/'){echo './photo-gallery';} else {echo '../photo-gallery';}?>">Фотогалереї</a>
                 </li>
                 <li class="nav-item <?php if($route == '/admin-panel/admin-question'){echo 'active';}?>">
                     <a class="nav-link" href="<?php if($route == '/admin-panel/'){echo './admin-question';} else {echo '../admin-question';}?>">Питання</a>
                 </li>
                 <li class="nav-item <?php if($route == '/admin-panel/new-mail'){echo 'active';}?>">
-                    <a class="nav-link" href="<?php if($route == '/admin-panel/'){echo './new-mail';} else {echo '../new-mail';}?>">Нова розсилка</a>
+                    <a class="nav-link" href="<?php if($route == '/admin-panel/'){echo './new-mail';} else {echo '../new-mail';}?>">Розсилка</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="<?php if($route == '/admin-panel/'){echo '../';} else {echo '../../';}?>">Сайт</a>

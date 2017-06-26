@@ -8,9 +8,15 @@
     <body>
         <?php require '../shared/navbar.php'?>
         
-        <div class="container" style="margin-top: 150px">
-            <h4>м. Чернівці, вул. Тихоріцька 22</h4>
-            <div id="map" class="map"></div>
+        <div class="container">
+            <div class="breadcrumb">
+                <h2 class="title">Контакти</h2>
+            </div>
+            <div class="space-top">
+                <h4>м. Чернівці, вул. Тихоріцька 22</h4>
+                <div id="map" class="map"></div>
+            </div>
+                       
         </div>
         <?php require '../shared/footer.php'?>
         <?php require '../shared/scripts.php'?>

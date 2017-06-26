@@ -8,7 +8,9 @@
     <body>
         <?php require '../shared/navbar.php'?>
         <div class="container">
-        teacher
+            <div class="breadcrumb">
+                <h2 class="title">Наші викладачі</h2>
+            </div>
         </div>
         
         <?php require '../shared/footer.php'?>

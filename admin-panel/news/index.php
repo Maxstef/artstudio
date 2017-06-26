@@ -7,6 +7,10 @@ if(!is_loged_in()){
     header('location: ../../y-admin');
 }
 
+if($_SERVER['REQUEST_METHOD'] === 'POST' && !isset($_POST['new-email'])){
+    
+}
+
 $conn = connect_to_db();       
 $sql = "SELECT * FROM post";
 $result = $conn->query($sql);
@@ -32,7 +36,7 @@ $result = $conn->query($sql);
                         "<div class='news-item row'>
                             <h5>$row[title]</h5>    
                             <a href='../../actions/delete_post.php'><button><i class='fa fa-trash' aria-hidden='true'></i></button></a>
-                        <div>";                              
+                        </div>";                              
                         $index++;
                     }
                 } else {

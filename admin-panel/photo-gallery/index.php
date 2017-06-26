@@ -16,7 +16,10 @@ if(!is_loged_in()){
     <body>
         <?php require '../shared/admin-navbar.php';?>
         <div class="container">
-            add-gallery
+            <div class="breadcrumb">
+                <h3 class="title">Фотогалереї</h3>
+             </div>
+            
         </div>
         <?php require '../../shared/footer.php'?>
         

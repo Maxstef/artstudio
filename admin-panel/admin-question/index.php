@@ -15,7 +15,9 @@ if(!is_loged_in()){
     <body>
         <?php require '../shared/admin-navbar.php';?>
         <div class="container">
-            question
+            <div class="breadcrumb">
+                <h3 class="title">Питання</h3>
+             </div>
         </div>
         <?php require '../../shared/footer.php'?>
         

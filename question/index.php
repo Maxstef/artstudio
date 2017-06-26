@@ -9,7 +9,9 @@
         <?php require '../shared/navbar.php'?>
         
         <div class="container">
-        question
+            <div class="breadcrumb">
+                <h2 class="title">Питання</h2>
+            </div>
         </div>
         
         <?php require '../shared/footer.php'?>

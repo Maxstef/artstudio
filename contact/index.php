@@ -1,5 +1,7 @@
 <?php
-    require '../config/config.php';
+
+require '../config/config.php';
+
 ?>
 
 <!DOCTYPE html>
@@ -13,7 +15,7 @@
                 <h2 class="title">Контакти</h2>
             </div>
             <div class="space-top">
-                <h4>м. Чернівці, вул. Тихоріцька 22</h4>
+                <h4><?php echo $address;?></h4>
                 <div id="map" class="map"></div>
             </div>
                        

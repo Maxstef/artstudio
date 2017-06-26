@@ -27,7 +27,7 @@
         <?php 
             if(isset($_SESSION['email'])){
                 echo '<ul class="navbar-nav nav-height pull-right"><li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="./" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">';
-                echo    $_SESSION[email];
+                echo    $_SESSION['email'];
                 echo '</a><div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink"><a class="dropdown-item" href="../admin-panel">Адмін панель</a><a class="dropdown-item" href="../actions/logout.php">Вийти</a></div></ul>';
             }
         ?>

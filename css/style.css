@@ -132,13 +132,23 @@ body {
   box-shadow: 0 0 0 3px rgba(255,255,0,.5);
 }
 
-.new-post-form {
+.new-post-form, .edit-post-form {
     margin-bottom: 40px;
 }
 
 
 #no-file, #success-upload {
     display: none;
+}
+
+.news-list-delete-btn {
+    position: absolute;
+    right:  10px;
+}
+
+.saved-img {
+    width:  300px;
+    height: auto;
 }
 
 

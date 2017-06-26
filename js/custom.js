@@ -34,8 +34,64 @@ $('document').ready(function () {
                 console.log(res);
                 $("#uploaded-img").attr("src", "../../uploaded/" + res);
                 $("#success-upload").fadeIn(300);
-                $(".new-post-form").append("<input style='display: none' name='photo' value='" + res + "'>");
+                $("#uploaded-image").remove();
+                if($(".new-post-form").length){
+                    $(".new-post-form").append("<input id='uploaded-image' style='display: none' name='photo' value='" + res + "'>");
+                } else if($(".edit-post-form").length){
+                    $(".edit-post-form").append("<input id='uploaded-image' style='display: none' name='photo' value='" + res + "'>");
+                }
+                
             }
         });
-    })
-})
+    });
+    $(".new-post-form").on('submit', function (e) {
+        if ($("#uploaded-image").length > 0) {
+            return;
+        } else {
+            e.preventDefault();
+            $("#no-file").fadeIn(300);
+        }
+    });
+});
+
+function publish(id){
+    var io = $("#news-" + id).find(".checkbox");
+    if(io.attr('checked') == 'checked'){
+        $.ajax({
+            type: "POST",
+            url: "../../actions/publish.php",
+            data: {
+                published: 0,
+                id: id
+            },
+            success: function (res) {
+                console.log(res);
+                io.removeAttr('checked');
+            }
+        });
+        
+    } else {
+    $.ajax({
+        type: "POST",
+        url: "../../actions/publish.php",
+        data: {
+            published: 1,
+            id: id
+        },
+        success: function (res) {
+            console.log(res);
+            io.attr('checked', 'checked');
+        }
+    });
+        
+    }
+}
+
+function confirmDeletePost(e, title){
+    alert('hell');
+    e.preventDefault();
+    confirm('Ви впевнeні що хочете видалити новину ' + title);
+    if(!confirm('Ви впевнeні що хочете видалити новину ' + title)){
+        e.preventDefault();
+    }
+}

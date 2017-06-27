@@ -1,4 +1,12 @@
 $('document').ready(function () {
+    $(".main-page-item").hover(function () {
+        var width = $(this).find('.main-page-img').width();
+        var height = $(this).find('.main-page-img').height();
+        $(this).find('.painted-black').css({ 'width': width + 'px', 'height': height + 'px', 'opacity': '0.2' });
+    }, function () {
+        $(this).find('.painted-black').css({ 'opacity': '0' });
+    });
+
     $(".footer-to-top").on('click', function () {
         var duration = 100;
         var y = pageYOffset,
@@ -23,7 +31,6 @@ $('document').ready(function () {
             $("#no-file").fadeOut(300);
         }
 
-
         $.ajax({
             type: "POST",
             url: "../../actions/upload.php",
@@ -35,12 +42,11 @@ $('document').ready(function () {
                 $("#uploaded-img").attr("src", "../../uploaded/" + res);
                 $("#success-upload").fadeIn(300);
                 $("#uploaded-image").remove();
-                if($(".new-post-form").length){
+                if ($(".new-post-form").length) {
                     $(".new-post-form").append("<input id='uploaded-image' style='display: none' name='photo' value='" + res + "'>");
-                } else if($(".edit-post-form").length){
+                } else if ($(".edit-post-form").length) {
                     $(".edit-post-form").append("<input id='uploaded-image' style='display: none' name='photo' value='" + res + "'>");
                 }
-                
             }
         });
     });
@@ -65,25 +71,50 @@ function publish(id){
                 id: id
             },
             success: function (res) {
-                console.log(res);
+                io.removeAttr('checked');
+            }
+        });  
+    } else {
+        $.ajax({
+            type: "POST",
+            url: "../../actions/publish.php",
+            data: {
+                published: 1,
+                id: id
+            },
+            success: function (res) {
+                io.attr('checked', 'checked');
+            }
+        });
+    }
+}
+
+function onMain(id){
+    var io = $("#on-main-" + id);
+    if(io.attr('checked') == 'checked'){
+        $.ajax({
+            type: "POST",
+            url: "../../actions/publish.php",
+            data: {
+                onmain: 0,
+                id: id
+            },
+            success: function (res) {
                 io.removeAttr('checked');
             }
         });
-        
     } else {
-    $.ajax({
-        type: "POST",
-        url: "../../actions/publish.php",
-        data: {
-            published: 1,
-            id: id
-        },
-        success: function (res) {
-            console.log(res);
-            io.attr('checked', 'checked');
-        }
-    });
-        
+        $.ajax({
+            type: "POST",
+            url: "../../actions/publish.php",
+            data: {
+                onmain: 1,
+                id: id
+            },
+            success: function (res) {
+                io.attr('checked', 'checked');
+            }
+        });
     }
 }
 

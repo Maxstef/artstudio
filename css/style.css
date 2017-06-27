@@ -17,6 +17,53 @@ body {
     margin-top: 40px;
 }
 
+.main-page-item {
+    overflow: hidden;
+    width: 100%;
+    margin-bottom: 35px;
+}
+
+.painted-black {
+    width:  100%;
+    height: 100%;
+    opacity: 0;
+    background: black;
+    position: absolute;
+}
+
+.main-page-item > a:hover {
+    text-decoration: none;
+}
+
+.main-page-item > a:hover .painted-black {
+    opacity: 0.5;
+}
+
+.image-wrapper {
+    position: relative;
+}
+
+.main-page-img {
+    width:  100%;
+    height: auto;
+}
+
+.main-page-item-text {
+    padding: 0px 20px;
+    color:  black;
+    font-size: 20px;
+}
+
+.main-page-item-title {
+    position: absolute;
+    bottom: 0;
+    width: 90%;
+    color: white;
+    background: rgba(0,0,0,0.5);
+    padding: 10px;
+    margin-bottom: 0;
+}
+
 .login-form-container {
     margin-top: 100px;
     max-width: 500px;
@@ -149,6 +196,10 @@ body {
 .saved-img {
     width:  300px;
     height: auto;
+}
+
+.btn-marg {
+    margin:  10px;
 }
 
 

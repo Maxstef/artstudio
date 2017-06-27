@@ -65,7 +65,12 @@ if($_SERVER['REQUEST_METHOD'] === 'POST' && !isset($_POST['new-email'])){
 
 <!DOCTYPE html>
 <html lang="uk">
-    <?php require '../shared/head.php'?>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <link rel="icon" type="image/png" href="../../favicon.png" />
+        <title>Художня студія Червоний квадрат</title>
+        <?php require '../shared/styles.php'?>
+    </head>
     <body>
         <?php require '../shared/navbar.php'?>
         <div class='container'>

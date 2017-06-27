@@ -6,7 +6,14 @@ require '../config/config.php';
 
 <!DOCTYPE html>
 <html lang="uk">
-    <?php require '../shared/head.php'?>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <link rel="icon" type="image/png" href="../../favicon.png" />
+        <title>Художня студія Червоний квадрат</title>
+        <meta name="description" content="Художня студія Червоний квадрат місто Чернівці">
+        <meta name="keywords" content="художня студія, чернівці, червоний квадрат, художня студія чернівці">
+        <?php require '../shared/styles.php'?>
+    </head>
     <body>
         <?php require '../shared/navbar.php'?>
         

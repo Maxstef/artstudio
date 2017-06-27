@@ -12,7 +12,12 @@ if(!is_loged_in()){
 
 <!DOCTYPE html>
 <html lang="uk">
-    <?php require '../../shared/head.php'?>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <link rel="icon" type="image/png" href="../../favicon.png" />
+        <title>Художня студія Червоний квадрат</title>
+        <?php require '../../shared/styles.php'?>
+    </head>
     <body>
         <?php require '../shared/admin-navbar.php';?>
         <div class="container">

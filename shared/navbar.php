@@ -16,6 +16,9 @@
         <li class="nav-item <?php if($route == '/teacher/'){echo 'active';}?>">
             <a class="nav-link" href="../teacher">Викладачі</a>
         </li>
+        <li class="nav-item <?php if($route == '/news-list/'){echo 'active';}?>">
+            <a class="nav-link" href="../news-list">Новини</a>
+        </li>
         <li class="nav-item <?php if($route == '/question/'){echo 'active';}?>">
             <a class="nav-link" href="../question">Питання</a>
         </li>

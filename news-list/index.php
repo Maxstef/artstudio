@@ -10,15 +10,16 @@ require '../config/config.php';
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
         <link rel="icon" type="image/png" href="../../favicon.png" />
         <title>Художня студія Червоний квадрат</title>
-        <meta name="description" content="Художня студія Червоний квадрат місто Чернівці">
-        <meta name="keywords" content="художня студія, чернівці, червоний квадрат, художня студія чернівці">
+        <meta name="description" content="Художня студія Червоний квадрат новини місто Чернівці">
+        <meta name="keywords" content="художня студія новини, чернівці, червоний квадрат, художня студія чернівці, новини">
         <?php require '../shared/styles.php'?>
     </head>
     <body>
         <?php require '../shared/navbar.php'?>
+        
         <div class="container">
             <div class="breadcrumb">
-                <h2 class="title">Наші викладачі</h2>
+                <h2 class="title">Новини</h2>
             </div>
         </div>
         

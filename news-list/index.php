@@ -58,6 +58,7 @@ $result = $conn->query($sql);
                     </div>
                 </div>
             </div>
+            <?php require '../shared/subscribe_form.php'?>
         </div>
         <?php require '../shared/footer.php'?>
         <?php require '../shared/scripts.php'?>

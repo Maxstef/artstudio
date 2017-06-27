@@ -17,6 +17,10 @@ body {
     margin-top: 40px;
 }
 
+.space-bottom {
+    margin-bottom: 40px;
+}
+
 /**********************************/
 /********** main page  ************/
 /**********************************/
@@ -94,6 +98,67 @@ body {
     padding: 10px 0;
 }
 
+/**********************************/
+/********** more news  ************/
+/**********************************/
+
+.more-news {
+    margin: 30px auto;
+    width: 90%;
+    position: relative;
+}
+
+.hover-effect, .more-news-image-wrapper, .more-news-image-wrapper img {
+    width:  100%;
+}
+
+.more-news-image-wrapper img {
+    border-radius: 10px;
+}
+
+.hover-effect {
+    background: black;
+    height: 100%;
+    position: absolute;
+    opacity: 0.1;
+    border-radius: 10px;
+}
+
+.more-news:hover .hover-effect {
+    opacity: 0.7;
+}
+
+.more-news-text {
+    text-align: center;
+}
+
+.more-news-text h6 {
+    opacity: 0;
+    color: white;
+    position: absolute;
+    top:  30%;
+    z-index: 100;
+    font-size: 30px;
+}
+
+.more-news:hover .more-news-text h6 {
+    opacity: 1;
+}
+
+
+/**********************************/
+/********** subscribe  ************/
+/**********************************/
+
+.subscribe-form {
+    margin: 20px 0;
+}
+
+#suscribe-feedback {
+    display: none;
+    margin: 0 5px;
+}
+
 
 /**********************************/
 /********** navbar  ************/
@@ -143,6 +208,10 @@ body {
 .news-details-text-wrapper p {
     line-height: 1.75;
     margin-bottom: 15px;
+}
+
+.news-details-date-wrapper {
+    margin:  25px 0;
 }
 
 /**********************************/

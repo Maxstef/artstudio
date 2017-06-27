@@ -8,12 +8,21 @@ if(isset($_GET['id'])){
     $conn = connect_to_db();
     $sql = "SELECT * FROM post WHERE id=$_GET[id]";
     $result = $conn->query($sql);
+    $sql_last = "SELECT * FROM post WHERE published=1 ORDER BY date DESC LIMIT 1";
+    $last = $conn->query($sql_last);
 
     while($row = $result->fetch_assoc()) {
         $title = $row['title'];
         $photo = $row['photo'];
         $text = $row['text'];
         $date = $row['date'];               
+    }
+
+    while($row = $last->fetch_assoc()) {
+        $last_title = $row['title'];
+        $last_photo = $row['photo'];
+        $last_text = $row['text'];
+        $last_date = $row['date'];               
     }
 }
 
@@ -55,16 +64,32 @@ if(isset($_GET['id'])){
                 </div>
                 <div class="col-12 col-lg-3 padd-bott">
                     <div class="row">
-                        <div class="col-md-8 col-lg-12">
+                        <div class="col-md-6 col-lg-12">
                             <?php require '../shared/contact_widget.php'?>
                         </div>
-                        <div class="hidden-sm-down col-md-4 col-lg-12">
+                        <div class="hidden-md-down col-md-4 col-lg-12">
                             <?php require '../shared/calendar_widget.php'?>
                         </div>
+                        <div class="col-md-6 col-lg-12">
+                            <div id="more-news-widget" class="more-news">
+                                <a href="../news-list">
+                                <div class="hover-effect">
+                                </div>
+                                <div class="more-news-text">
+                                    <h6>Більше новин</h6>
+                                </div>
+                                <div class="more-news-image-wrapper">
+                                    <img src="<?php echo "../uploaded/" . $last_photo;?>" alt="<?php echo $last_title . ' картинка';?>">
+                                </div>
+                                <h6 style="margin: 0 10px;color:  black"><?php echo $last_title;?></h6>
+                                </a>
+                            </div>
+                        </div>
+                        
                     </div>
                 </div>
             </div>
-            
+            <?php require '../shared/subscribe_form.php'?>
          </div>
         <?php require '../shared/footer.php'?>
         <?php require '../shared/scripts.php'?>

@@ -1,4 +1,7 @@
 $('document').ready(function () {
+    var wrapW = $("#more-news-widget").width();
+    var innW = $("#more-news-widget").find(".more-news-text h6").width();
+    $("#more-news-widget").find(".more-news-text h6").css({ 'left': (wrapW - innW) / 2 + 'px' });
     $(".main-page-item").hover(function () {
         var width = $(this).find('.main-page-img').width();
         var height = $(this).find('.main-page-img').height();
@@ -38,7 +41,6 @@ $('document').ready(function () {
             contentType: false,
             data: data,
             success: function (res) {
-                console.log(res);
                 $("#uploaded-img").attr("src", "../../uploaded/" + res);
                 $("#success-upload").fadeIn(300);
                 $("#uploaded-image").remove();
@@ -58,6 +60,12 @@ $('document').ready(function () {
             $("#no-file").fadeIn(300);
         }
     });
+});
+
+$(window).resize(function(){
+    var wrapW = $("#more-news-widget").width();
+    var innW = $("#more-news-widget").find(".more-news-text h6").width();
+    $("#more-news-widget").find(".more-news-text h6").css({ 'left': (wrapW - innW) / 2 + 'px' });
 });
 
 function publish(id){
@@ -122,4 +130,21 @@ function confirmDeletePost(e, title){
     if(!confirm('Ви впевнeні що хочете видалити новину ' + title)){
         e.preventDefault();
     }
+}
+
+function onSubscribe(e){
+    console.log('here');
+    e.preventDefault();
+    var email = $("#subs-email").val();
+    $.ajax({
+        type: "POST",
+        url: "../../actions/subscribe.php",
+        data: {
+            email: email
+        },
+        success: function (res) {
+            $("#suscribe-feedback").text(res);
+            $("#suscribe-feedback").fadeIn(300);
+        }
+    });
 }

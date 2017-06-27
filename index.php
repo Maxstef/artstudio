@@ -26,7 +26,7 @@ $result = $conn->query($sql);
                 <h1 class="title">Художня студія "Червоний Квадрат"</h1>
              </div>
             <div class="row">
-                <div class="col-12 col-md-9">
+                <div class="col-12 col-lg-9">
                     <?php
                         if ($result->num_rows > 0) {
                             while($row = $result->fetch_assoc()) {
@@ -49,10 +49,16 @@ $result = $conn->query($sql);
                         }
                     ?>
                 </div>
-                <div class="col-12 col-md-3">
-                    WIDGHDT
+                <div class="col-12 col-lg-3 padd-bott">
+                    <div class="row">
+                        <div class="col-md-8 col-lg-12">
+                            <?php require './shared/contact_widget.php'?>
+                        </div>
+                        <div class="hidden-sm-down col-md-4 col-lg-12">
+                            <?php require './shared/calendar_widget.php'?>
+                        </div>
+                    </div>
                 </div>
-                
             </div>
         </div>
         <?php require './shared/footer.php'?>

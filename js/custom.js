@@ -2,7 +2,7 @@ $('document').ready(function () {
     $(".main-page-item").hover(function () {
         var width = $(this).find('.main-page-img').width();
         var height = $(this).find('.main-page-img').height();
-        $(this).find('.painted-black').css({ 'width': width + 'px', 'height': height + 'px', 'opacity': '0.2' });
+        $(this).find('.painted-black').css({ 'width': width + 'px', 'height': height + 'px', 'opacity': '0.4' });
     }, function () {
         $(this).find('.painted-black').css({ 'opacity': '0' });
     });

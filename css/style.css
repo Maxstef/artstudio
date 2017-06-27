@@ -17,6 +17,10 @@ body {
     margin-top: 40px;
 }
 
+/**********************************/
+/********** main page  ************/
+/**********************************/
+
 .main-page-item {
     overflow: hidden;
     width: 100%;
@@ -69,6 +73,32 @@ body {
     max-width: 500px;
 }
 
+/**********************************/
+/**********contact widget ************/
+/**********************************/
+
+.contact-widget {
+    background-color: #eceeef;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+}
+
+.contact-widget-item {
+    padding: 10px 3px;
+}
+
+.contact-widget-title {
+    border-bottom: 1px solid #aaa;
+    text-align: center;
+    padding: 10px 0;
+}
+
+
+/**********************************/
+/********** navbar  ************/
+/**********************************/
+
 .nav-item.active {
     background-color: #b9433f;
 }
@@ -93,6 +123,31 @@ body {
 .nav-right {
     margin-right: 40px;
 }
+
+/**********************************/
+/********** news details  ************/
+/**********************************/
+
+.news-details, .news-details-img, .news-details-img-wrapper {
+    width:  100%;
+}
+
+.news-details-img {
+    height: auto;
+}
+
+.news-details-title-wrapper {
+    margin: 15px 0;
+}
+
+.news-details-text-wrapper p {
+    line-height: 1.75;
+    margin-bottom: 15px;
+}
+
+/**********************************/
+/********** footer  ************/
+/**********************************/
 
 .footer {
   bottom: 0;
@@ -200,6 +255,10 @@ body {
 
 .btn-marg {
     margin:  10px;
+}
+
+.padd-bott {
+    padding-bottom: 50px;
 }
 
 

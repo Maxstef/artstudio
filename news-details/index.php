@@ -36,6 +36,35 @@ if(isset($_GET['id'])){
             <div class="breadcrumb">
                 <h3 class="title">Художня студія "Червоний Квадрат"</h3>
              </div>
+            <div class="row">
+                <div class="col-12 col-lg-9">
+                    <div class="news-details">
+                        <div class="news-details-img-wrapper">
+                            <img class="news-details-img" src="<?php echo "../uploaded/" . $photo;?>" alt="<?php echo $title . ' картинка'; ?>">
+                        </div>
+                        <div class="news-details-title-wrapper">
+                            <h1><?php echo $title;?></h1>
+                        </div>
+                        <div class="news-details-date-wrapper">
+                            <h5>Додано - <?php echo $date;?></h5>
+                        </div>
+                        <div class="news-details-text-wrapper">
+                            <p><?php echo $text;?></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-3 padd-bott">
+                    <div class="row">
+                        <div class="col-md-8 col-lg-12">
+                            <?php require '../shared/contact_widget.php'?>
+                        </div>
+                        <div class="hidden-sm-down col-md-4 col-lg-12">
+                            <?php require '../shared/calendar_widget.php'?>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
          </div>
         <?php require '../shared/footer.php'?>
         <?php require '../shared/scripts.php'?>

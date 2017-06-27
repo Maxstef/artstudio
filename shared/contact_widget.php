@@ -1,2 +1,13 @@
-<?php
 
+<div class="contact-widget">
+    <h4 class="contact-widget-title">Наші Контакти</h4>
+    <div class="contact-widget-item">
+        Адреса - <?php echo $address;?>
+    </div>
+    <div class="contact-widget-item">
+        Телефон - <?php echo $tel_number;?>
+    </div>
+    <div class="contact-widget-item">
+        Електронна пошта - <?php echo $email;?>
+    </div>
+</div>

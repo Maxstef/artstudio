@@ -21,6 +21,7 @@ require '../config/config.php';
             <div class="breadcrumb">
                 <h2 class="title">Питання</h2>
             </div>
+            <?php require '../shared/contact_form.php'?>
         </div>
         
         <?php require '../shared/footer.php'?>

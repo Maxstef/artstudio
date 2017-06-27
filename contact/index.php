@@ -21,12 +21,20 @@ require '../config/config.php';
             <div class="breadcrumb">
                 <h2 class="title">Контакти</h2>
             </div>
-            <?php require '../shared/contact_widget.php'?>
-            <div class="space-top space-bottom">
-                <h4><?php echo $address;?></h4>
-                <div id="map" class="map"></div>
+            <div class="row">
+                <div class="col-12">
+                    <?php require '../shared/contact_widget.php'?>
+                </div>
+                <div class="col-12">
+                    <div class="space-top space-bottom">
+                        <h4><?php echo $address;?></h4>
+                        <div id="map" class="map"></div>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <?php require '../shared/contact_form.php'?>
+                </div>
             </div>
-                       
         </div>
         <?php require '../shared/footer.php'?>
         <?php require '../shared/scripts.php'?>

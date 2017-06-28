@@ -13,6 +13,10 @@ body {
     cursor: pointer;
 }
 
+.red-hyper, .red-hyper:hover {
+    color: #b9433f;
+}
+
 .space-top {
     margin-top: 40px;
 }
@@ -91,6 +95,29 @@ body {
 
 .md-down {
     order:  3;
+}
+.card-block-question {
+    float:  left;
+    max-width: 80%;
+    
+}
+
+.card-block-question p {
+    background: #ddf;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.card-block-answer p {
+    background: #f9937f;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.card-block-answer {
+    max-width: 80%;
+    clear: both;
+    float:  right;
 }
 /**********************************/
 /**********contact widget ************/

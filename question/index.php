@@ -1,6 +1,11 @@
 <?php
 
 require '../config/config.php';
+require '../shared/function.php';
+
+$conn = connect_to_db();
+$sql = "SELECT * FROM question WHERE published=1 ORDER BY date DESC";
+$result = $conn->query($sql);
 
 ?>
 
@@ -30,7 +35,28 @@ require '../config/config.php';
                     <?php require '../shared/contact_widget.php'?>
                 </div>
                 <div class="col-12 md-up">
-                    Список питань!!!
+                    <?php
+                        if ($result->num_rows > 0) {
+                            while($row = $result->fetch_assoc()) {
+                                echo "
+                                    <div class='card space-bottom'>
+                                      <div class='card-block'>
+                                        <div class='card-block-question'>
+                                            <h6>Питання:</h6>
+                                            <p>$row[question]</p>
+                                        </div>
+                                        <div class='card-block-answer'>
+                                            <h6>Відповідь:</h6>
+                                            <p>$row[answer]</p>
+                                        </div>
+                                      </div>
+                                    </div>
+                                ";
+                            }
+                        } else {
+                            echo "<p class='alert alert-info'>Жодного питання не опубліковано</p>";
+                        }
+                    ?>
                 </div>
             </div>
             

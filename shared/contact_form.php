@@ -16,6 +16,6 @@
         <label for="feedback-form-message">Повідомлення</label>
         <textarea id="feedback-form-message" name="message" class="form-control" rows="5" required></textarea>
     </div>
-    <button id="feedback-form-submit-btn" type="submit" class="btn-marg btn btn-primary">Надіслати</button>
+    <button id="feedback-form-submit-btn" type="submit" class="btn-marg btn btn-danger">Надіслати</button>
     <p id="feedback-form-feedback" class="alert alert-success"></p>
 </form>

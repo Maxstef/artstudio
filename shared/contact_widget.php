@@ -14,7 +14,7 @@
     </div>
     <?php if($route != '/contact/'){
          echo '<div class="contact-widget-item">
-            <a href="../contact">Контакти</a>
+            <a class="red-hyper" href="../contact">Контакти</a>
         </div>';
     }?>
     

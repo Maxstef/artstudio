@@ -372,6 +372,11 @@ body {
     padding-bottom: 50px;
 }
 
+.bottom-divider {
+    padding-bottom: 20px;
+    border-bottom: 1px solid #aaa;
+}
+
 
 @media only screen and (min-width: 768px){
     .nav-height {

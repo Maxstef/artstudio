@@ -31,7 +31,7 @@ $result = $conn->query($sql);
              </div>
              <ul class="list-group">
                 <li class='list-group-item list-group-item-action'>
-                    <span style="position: absolute; left:  1%;">Заголовок, Дата публікації</span>
+                    <span style="position: absolute; left:  1%;">Питання, Дата додавання</span>
                     <span style="position: absolute; left:  77%;">Опублікувати</span>
                     <span style="position: absolute; left:  95%;">Видалити</span>
                 </li>
@@ -42,9 +42,9 @@ $result = $conn->query($sql);
                                 <li class='list-group-item list-group-item-action'>
                                     <a style='width: 60%' href='../answer?id=$row[id]'>";
                                     if(!$row['done']){
-                                        echo "<i style='color: red' class='fa fa-exclamation fa-lg' aria-hidden='true'></i>";
+                                        echo "<i style='color: red; padding-right: 10px' class='fa fa-exclamation fa-lg' aria-hidden='true'></i>";
                                     }
-                                    echo " $row[question], $row[date]</a>
+                                    echo mb_substr(htmlspecialchars($row['question']), 0, 200) . '...' . ", $row[date]</a>
                                     <div style='position: absolute; left: 80%' class='form-group' id='question-$row[id]' onclick='publish_question($row[id])'>
                                         <input type='checkbox' class='checkbox'";
                                         if($row['published']){

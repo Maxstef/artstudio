@@ -33,7 +33,7 @@ $result = $conn->query($sql);
              </div>
             <ul class="list-group">
                 <li class='list-group-item list-group-item-action'>
-                    <span style="position: absolute; left:  1%;">Заголовок, Дата публікації</span>
+                    <span style="position: absolute; left:  1%;">Заголовок, Дата додавання</span>
                     <span style="position: absolute; left:  67%;">Опублікувати</span>
                     <span style="position: absolute; left:  80%;">На головну</span>
                     <span style="position: absolute; left:  95%;">Видалити</span>

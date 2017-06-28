@@ -97,6 +97,35 @@ function publish_post(id){
     }
 }
 
+function publish_question(id){
+    var io = $("#question-" + id).find(".checkbox");
+    if(io.attr('checked') == 'checked'){
+        $.ajax({
+            type: "POST",
+            url: "../../actions/publish_question.php",
+            data: {
+                published: 0,
+                id: id
+            },
+            success: function (res) {
+                io.removeAttr('checked');
+            }
+        });  
+    } else {
+        $.ajax({
+            type: "POST",
+            url: "../../actions/publish_question.php",
+            data: {
+                published: 1,
+                id: id
+            },
+            success: function (res) {
+                io.attr('checked', 'checked');
+            }
+        });
+    }
+}
+
 function onMain(id){
     var io = $("#on-main-" + id);
     if(io.attr('checked') == 'checked'){

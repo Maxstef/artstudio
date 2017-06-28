@@ -1,10 +1,20 @@
 <?php
     
+error_reporting(E_ALL);
+ini_set("display_errors", 1);
 require '../config/config.php';
 require '../shared/function.php';
 
 if(!is_loged_in()){
     header('location: ../y-admin');
+}
+
+$conn = connect_to_db();
+$sql = "SELECT Count(id) as unreaded_number FROM question WHERE done=0";
+$result = $conn->query($sql);
+
+while($row = $result->fetch_assoc()) {
+    $unreaded_number = $row['unreaded_number'];
 }
 
 ?>
@@ -44,7 +54,7 @@ if(!is_loged_in()){
                             <i class="fa fa-question-circle fa-3x fa-fw" aria-hidden="true"></i>
                             <h4>Питання</h4>
                           </a>
-                          <span class="badge badge-danger counter">0</span>
+                          <span class="badge badge-danger counter"><?php echo $unreaded_number;?></span>
                         </div>
                         <div class="col-6 col-sm-4 text-center space-top">
                           <a href="./new-mail">

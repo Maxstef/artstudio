@@ -2,19 +2,20 @@
 
 ?>
 
-<form class="feedback-form">
+<form class="feedback-form" id="feedback-form" onsubmit="sendMessage(event)">
     <h4>Контактна форма для зв'язку з нами:</h4>
     <div class="form-group">
-        <label for="name">Ваше ім'я</label>
-        <input type="text" class="form-control" id="name" required>
+        <label for="feedback-form-name">Ваше ім'я</label>
+        <input id="feedback-form-name" name="name" type="text" class="form-control" required>
     </div>
     <div class="form-group">
-        <label for="contacts">Контактні дані (телефон, ел.пошта)</label>
-        <input type="text" class="form-control" id="contacts" required>
+        <label for="feedback-form-contacts">Контактні дані (телефон, ел.пошта)</label>
+        <input id="feedback-form-contacts" name="contacts" type="text" class="form-control" required>
     </div>
     <div class="form-group">
-        <label for="exampleTextarea">Повідомлення</label>
-        <textarea class="form-control" id="exampleTextarea" rows="5" required></textarea>
+        <label for="feedback-form-message">Повідомлення</label>
+        <textarea id="feedback-form-message" name="message" class="form-control" rows="5" required></textarea>
     </div>
-    <button type="submit" class="btn btn-primary">Надіслати</button>
+    <button id="feedback-form-submit-btn" type="submit" class="btn btn-primary">Надіслати</button>
+    <p id="feedback-form-feedback" class="alert alert-success"></p>
 </form>

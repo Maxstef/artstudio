@@ -21,7 +21,19 @@ require '../config/config.php';
             <div class="breadcrumb">
                 <h2 class="title">Питання</h2>
             </div>
-            <?php require '../shared/contact_form.php'?>
+            <h4 style="padding:  15px">Ви можете задати нам питання у формі для зв'язку з нами</h4>
+            <div class="row ordered">
+                <div class="col-12 col-lg-9 ">
+                    <?php require '../shared/contact_form.php'?>
+                </div>    
+                <div class="col-12 col-lg-3 md-down">
+                    <?php require '../shared/contact_widget.php'?>
+                </div>
+                <div class="col-12 md-up">
+                    Список питань!!!
+                </div>
+            </div>
+            
         </div>
         
         <?php require '../shared/footer.php'?>

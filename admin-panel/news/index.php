@@ -45,7 +45,7 @@ $result = $conn->query($sql);
                         echo "
                             <li class='list-group-item list-group-item-action'>
                                 <a style='width: 60%' href='../add-news?id=$row[id]'> $row[title], $row[date]</a>
-                                <div style='position: absolute; left: 70%' class='form-group' id='news-$row[id]' onclick='publish($row[id])'>
+                                <div style='position: absolute; left: 70%' class='form-group' id='news-$row[id]' onclick='publish_post($row[id])'>
                                     <input type='checkbox' class='checkbox'";
                                     if($row['published']){
                                         echo "checked='checked'";
@@ -58,7 +58,7 @@ $result = $conn->query($sql);
                                         echo "checked='checked'";
                                     }
                                     echo "/>
-                                <a class='news-list-delete-btn' onclick='confirmDeletePost(event, \"" .  $row["title"] .  "\")' href='../../actions/delete_post.php?id=$row[id]'><button class='btn btn-sm btn-danger'><i class='fa fa-trash' aria-hidden='true'></i></button></a>
+                                <a class='news-list-delete-btn' onclick='confirmDeletePost(event)' href='../../actions/delete_post.php?id=$row[id]'><button class='btn btn-sm btn-danger'><i class='fa fa-trash' aria-hidden='true'></i></button></a>
                             </li>
                             
                         ";

@@ -12,17 +12,17 @@ if(isset($_GET['id'])){
     $last = $conn->query($sql_last);
 
     while($row = $result->fetch_assoc()) {
-        $title = $row['title'];
-        $photo = $row['photo'];
-        $text = $row['text'];
-        $date = $row['date'];               
+        $title = htmlspecialchars($row['title']);
+        $photo = htmlspecialchars($row['photo']);
+        $text = htmlspecialchars($row['text']);
+        $date = htmlspecialchars($row['date']);
     }
 
     while($row = $last->fetch_assoc()) {
-        $last_title = $row['title'];
-        $last_photo = $row['photo'];
-        $last_text = $row['text'];
-        $last_date = $row['date'];               
+        $last_title = htmlspecialchars($row['title']);
+        $last_photo = htmlspecialchars($row['photo']);
+        $last_text = htmlspecialchars($row['text']);
+        $last_date = htmlspecialchars($row['date']);
     }
 }
 

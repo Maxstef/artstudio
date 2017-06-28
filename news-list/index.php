@@ -34,10 +34,10 @@ $result = $conn->query($sql);
                                             <a href='../news-details?id=$row[id]'>
                                             <div class='col-12 img-wrapper'>
                                                 <div class='painted-black'></div>
-                                                <img class='main-page-img' src='../uploaded/$row[photo]' alt='$row[title] картинка'>
-                                                <h3 class='main-page-item-title'>$row[title]</h3>
+                                                <img class='main-page-img' src='../uploaded/$row[photo]' alt='" . htmlspecialchars($row['title']) . " картинка'>
+                                                <h3 class='main-page-item-title'>" . htmlspecialchars($row['title']) . "</h3>
                                             </div>
-                                            <p class='main-page-item-text'>"; echo mb_substr($row['text'], 0, 200) . '...'; echo"</p>
+                                            <p class='main-page-item-text'>" . mb_substr(htmlspecialchars($row['text']), 0, 200) . '...' . "</p>
                                             </a>
                                         </div>
                                         

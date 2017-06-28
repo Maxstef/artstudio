@@ -78,6 +78,21 @@ body {
 }
 
 /**********************************/
+/********** question  ************/
+/**********************************/
+
+.ordered {
+    display: flex;
+}
+
+.md-up {
+    order:  2;
+}
+
+.md-down {
+    order:  3;
+}
+/**********************************/
 /**********contact widget ************/
 /**********************************/
 
@@ -114,7 +129,7 @@ body {
 }
 
 .feedback-form .form-group {
-    margin: 0 15px;
+    margin: 20px 15px 0;
 }
 
 .feedback-form button[type=submit] {
@@ -335,6 +350,10 @@ body {
     display: none;
 }
 
+#feedback-form-feedback {
+    display: none;
+}
+
 .news-list-delete-btn {
     position: absolute;
     right:  10px;
@@ -376,5 +395,16 @@ body {
 
     .dropdown-menu {
         left:  -100px;
+    }
+    
+}
+
+@media only screen and (min-width: 992px) {
+    .md-up {
+        order:  3;
+    }
+
+    .md-down {
+        order:  2;
     }
 }

@@ -33,6 +33,7 @@
                         <?php echo $_SESSION['email'];?>
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="<?php if($route == '/admin-panel/'){echo '../';} else {echo '../../';}?>">Сайт</a>
                         <a class="dropdown-item" href="<?php if($route == '/admin-panel/'){echo '../actions/logout.php';} else {echo '../../actions/logout.php';}?>">Вийти</a>
                     </div>
                 </li>

@@ -1,6 +1,9 @@
 <?php
+    
+require '../config/config.php';
+require '../shared/function.php';
 
-if($_FILES['file']['size'] > 0){
+if($_FILES['file']['size'] > 0 && is_loged_in()){
     $path_parts = pathinfo($_FILES['file']['name']);
     $_FILES['file']['name'] = md5($filename . time()) . '.' . $path_parts['extension'];
     $filename = $_FILES['file']['name'];

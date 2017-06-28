@@ -46,7 +46,7 @@ require '../config/config.php';
                 };
                 var mapOptions = {
                     center: new google.maps.LatLng(cor.lat, cor.lon),
-                    zoom: 16,
+                    zoom: 17,
                     mapTypeId: google.maps.MapTypeId.ROADMAP
                 }
                 var map = new google.maps.Map(document.getElementById("map"), mapOptions);

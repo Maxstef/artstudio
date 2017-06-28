@@ -68,7 +68,7 @@ $(window).resize(function(){
     $("#more-news-widget").find(".more-news-text h6").css({ 'left': (wrapW - innW) / 2 + 'px' });
 });
 
-function publish(id){
+function publish_post(id){
     var io = $("#news-" + id).find(".checkbox");
     if(io.attr('checked') == 'checked'){
         $.ajax({
@@ -126,14 +126,19 @@ function onMain(id){
     }
 }
 
-function confirmDeletePost(e, title){
-    if(!confirm('Ви впевнeні що хочете видалити новину ' + title)){
+function confirmDeletePost(e){
+    if(!confirm('Ви впевнeні що хочете видалити новину?')){
+        e.preventDefault();
+    }
+}
+
+function confirmDeleteQuestion(e){
+    if(!confirm('Ви впевнeні що хочете видалити питання?')){
         e.preventDefault();
     }
 }
 
 function onSubscribe(e){
-    console.log('here');
     e.preventDefault();
     var email = $("#subs-email").val();
     $.ajax({
@@ -145,6 +150,28 @@ function onSubscribe(e){
         success: function (res) {
             $("#suscribe-feedback").text(res);
             $("#suscribe-feedback").fadeIn(300);
+        }
+    });
+}
+
+function sendMessage(e){
+    e.preventDefault();
+    var name = $("#feedback-form-name").val();
+    var contacts = $("#feedback-form-contacts").val();
+    var message = $("#feedback-form-message").val();
+    console.log(name, contacts, message);
+    $.ajax({
+        type: "POST",
+        url: "../../actions/new_question.php",
+        data: {
+            name: name,
+            contacts: contacts,
+            message: message
+        },
+        success: function (res) {
+            $("#feedback-form-feedback").text(res);
+            $("#feedback-form-feedback").fadeIn(300);
+            $("#feedback-form-submit-btn").attr('disabled', 'disabled');
         }
     });
 }

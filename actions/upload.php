@@ -3,13 +3,27 @@
 require '../config/config.php';
 require '../shared/function.php';
 
+
+
 if($_FILES['file']['size'] > 0 && is_loged_in()){
+    $conn = connect_to_db();
+    
     $path_parts = pathinfo($_FILES['file']['name']);
     $_FILES['file']['name'] = md5($filename . time()) . '.' . $path_parts['extension'];
     $filename = $_FILES['file']['name'];
+
+    if(isset($_POST['gallery']) && $_POST['destination'] === 'gallery'){
+        $sql = "INSERT INTO gallery_photo (photo, gallery_id) VALUES ('$filename', $_POST[gallery])";
+        if ($conn->query($sql) === FALSE) {
+            echo "Error: " . $sql . "<br>" . $conn->error;
+            die();
+        }
+    }
+
     $uploaddir = '../uploaded/' . $_POST['destination'] . '/';
     $uploadfile = $uploaddir . basename($_FILES['file']['name']);
     if (move_uploaded_file($_FILES['file']['tmp_name'], $uploadfile)) {
+        
         $im =    imagecreatefromjpeg($uploadfile);       
         $my_size = 1000;
         $w_src = imagesx($im);

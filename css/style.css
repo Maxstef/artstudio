@@ -280,6 +280,30 @@ body {
 }
 
 /**********************************/
+/********** add gallery  ************/
+/**********************************/
+
+.image-gallery-wrapper {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.delete-icon {
+    position: absolute; 
+    top: -5px; 
+    right:10px; 
+    color: red; 
+    background: white; 
+    cursor: pointer;
+    opacity: 0.5;
+}
+
+.delete-icon:hover {
+    opacity: 1;
+}
+
+
+/**********************************/
 /********** footer  ************/
 /**********************************/
 
@@ -372,14 +396,16 @@ body {
     margin-bottom: 40px;
 }
 
-
-#no-file, #success-upload {
+#feedback-form-feedback, #mail-form-feedback, #upload-loading, #no-file, #success-upload {
     display: none;
 }
 
-#feedback-form-feedback, #mail-form-feedback {
-    display: none;
+#upload-loading {
+    position: absolute;
+    right: 5px;
+    top:  20px;
 }
+
 
 .news-list-delete-btn {
     position: absolute;

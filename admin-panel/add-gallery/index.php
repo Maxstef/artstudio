@@ -10,9 +10,14 @@ if(!is_loged_in()){
 }
 
 if(isset($_GET['id'])){
+    $can_add_photo = TRUE;
     $conn = connect_to_db();
     $sql = "SELECT * FROM gallery WHERE id=$_GET[id]";
     $result = $conn->query($sql);
+    $sql_photo = "SELECT * FROM gallery_photo WHERE gallery_id=$_GET[id]";
+    $photos = $conn->query($sql_photo);
+} else {
+    $can_add_photo = FALSE;
 }
 
 if($_SERVER['REQUEST_METHOD'] === 'POST' && !isset($_GET['id'])){
@@ -117,9 +122,44 @@ if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_GET['id'])){
                     </form>
                 ';
             }?>
-            <div class="photo-list">
-               <h4>Зображення</h4>
-            </div>
+            <?php
+                if($can_add_photo === FALSE){
+                    echo "<p class='alert alert-info' style='margin: 20px'>Збережеть галерею для можливості додавання фото!</p>";
+                } else {
+                    echo "
+                        <div class='photo-list' style='margin-top:30px'>
+                           <h4>Зображення</h4>
+                           <form action='' method='post class='new-image-form'>
+                                <div class='form-group row'>
+                                    <div class='col-12 col-md-8'>
+                                        <label for='upload-image'>Додати зображення</label>
+                                        <input type='file' class='form-control' name='image' id='upload-image' accept='image/*'>
+                                    </div>
+                                    <div class='col-12 col-md-4' style='position: relative'>
+                                        <button type='button' class='btn btn-primary' style='margin-top: 35px' id='upload-btn' onclick='upload(" . '"gallery"' . ", $_GET[id])'>Завантажити</button>
+                                        <p class='loader' id='upload-loading'></p>
+                                    </div> 
+                                </div> 
+                           </form>
+                           <div id='images-container' class='images-container row'>";
+                           if (isset($photos) && $photos->num_rows > 0) {
+                                while($row = $photos->fetch_assoc()) {
+                                    echo "
+                                        <div class='col-12 col-md-6 col-lg-4 image-gallery-wrapper' id='image-$row[id]'>
+                                            <div class='delete-icon' onclick='deleteImg($row[id])'>
+                                                <i  class='fa fa-2x fa-window-close' aria-hidden='true'></i>
+                                            </div>
+                                            <img src='../..$gallery_photo_dir$row[photo]' alt='gallery-image' style='width: 100%'>
+                                        </div>
+                                    ";
+                                }
+                           }
+                           echo "</div>
+                        </div>
+                    ";
+                }
+            ?>
+            
         </div>
         <?php require '../../shared/footer.php'?>
         

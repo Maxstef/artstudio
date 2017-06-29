@@ -40,7 +40,7 @@ $result = $conn->query($sql);
                     while($row = $result->fetch_assoc()) {
                         echo "
                             <li class='list-group-item list-group-item-action'>
-                                <a style='width: 60%' href='../add-news?id=$row[id]'> $row[title], $row[date]</a>
+                                <a style='width: 60%' href='../add-gallery?id=$row[id]'> $row[title], $row[date]</a>
                                 <div style='position: absolute; left: 80%' class='form-group' id='gallery-$row[id]' onclick='publish_gallery($row[id])'>
                                     <input type='checkbox' class='checkbox'";
                                     if($row['published']){

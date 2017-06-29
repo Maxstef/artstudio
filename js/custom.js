@@ -23,36 +23,6 @@ $('document').ready(function () {
             }
         }, 10);
     });
-    $("#upload-btn").on("click", function () {
-        var file = document.getElementById('upload-image').files[0];
-        var data = new FormData();
-        data.append('file', file);
-        data.append('destination', 'post');
-        if (typeof file == "undefined") {
-            $("#no-file").fadeIn(300);
-            return;
-        } else {
-            $("#no-file").fadeOut(300);
-        }
-
-        $.ajax({
-            type: "POST",
-            url: "../../actions/upload.php",
-            processData: false,
-            contentType: false,
-            data: data,
-            success: function (res) {
-                $("#uploaded-img").attr("src", "../../uploaded/post/" + res);
-                $("#success-upload").fadeIn(300);
-                $("#uploaded-image").remove();
-                if ($(".new-post-form").length) {
-                    $(".new-post-form").append("<input id='uploaded-image' style='display: none' name='photo' value='" + res + "'>");
-                } else if ($(".edit-post-form").length) {
-                    $(".edit-post-form").append("<input id='uploaded-image' style='display: none' name='photo' value='" + res + "'>");
-                }
-            }
-        });
-    });
     $(".new-post-form").on('submit', function (e) {
         if ($("#uploaded-image").length > 0) {
             return;
@@ -68,6 +38,46 @@ $(window).resize(function(){
     var innW = $("#more-news-widget").find(".more-news-text h6").width();
     $("#more-news-widget").find(".more-news-text h6").css({ 'left': (wrapW - innW) / 2 + 'px' });
 });
+
+function upload(destination, galleryId){
+    var file = document.getElementById('upload-image').files[0];
+    var data = new FormData();
+    data.append('file', file);
+    data.append('destination', destination);
+    if(typeof galleryId !== 'undefined'){
+        data.append('gallery', galleryId);
+    }
+    if (typeof file == "undefined") {
+        $("#no-file").fadeIn(300);
+        return;
+    } else {
+        $("#no-file").fadeOut(300);
+    }
+    $("#upload-loading").show();
+    $.ajax({
+        type: "POST",
+        url: "../../actions/upload.php",
+        processData: false,
+        contentType: false,
+        data: data,
+        success: function (res) {
+            $("#upload-loading").hide();
+            if(destination === 'post'){
+                $("#uploaded-img").attr("src", "../../uploaded/" + destination + "/" + res);
+                $("#success-upload").fadeIn(300);
+                $("#uploaded-image").remove();
+                if ($(".new-post-form").length) {
+                    $(".new-post-form").append("<input id='uploaded-image' style='display: none' name='photo' value='" + res + "'>");
+                } else if ($(".edit-post-form").length) {
+                    $(".edit-post-form").append("<input id='uploaded-image' style='display: none' name='photo' value='" + res + "'>");
+                }
+            }
+            if(destination === 'gallery'){
+                $("#images-container").append("<div class='col-12 col-md-6 col-lg-4 image-gallery-wrapper'><img src='../../uploaded/" + destination + "/" + res + "' alt='gallery-image' style='width: 100%'></div>")
+            }
+        }
+    });
+}
 
 function publish_post(id){
     var io = $("#news-" + id).find(".checkbox");
@@ -259,6 +269,20 @@ function sendMail(e){
             $("#mail-form-feedback").text(res);
             $("#mail-form-feedback").fadeIn(300);
             $("#mail-loader").fadeOut(300);
+        }
+    });
+}
+
+function deleteImg(id){
+    $("#image-" + id).append("<p class='loader' style='position: absolute; left: 45%; top: 45%;'></p>")
+    $.ajax({
+        type: "POST",
+        url: "../../actions/delete_photo.php",
+        data: {
+            id: id
+        },
+        success: function (res) {
+            $("#image-" + id).remove();
         }
     });
 }

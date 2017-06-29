@@ -89,7 +89,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_GET['id'])){
                         <form action="" method="post" class="edit-post-form">
                           <div class="form-group">
                             <label for="title">Заголовок</label>
-                            <input class="form-control" name="title" id="title" value="' . $row["title"] . '" required>
+                            <input class="form-control" name="title" id="title" value=' . "'" . $row["title"] . "'" . ' required>
                           </div>
                           <div class="form-group">
                             <label for="text">Текст</label>
@@ -102,12 +102,12 @@ if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_GET['id'])){
                             </div>
                           </div>
                           <div class="form-group row">
-                            <div class="col-9">
+                            <div class="col-12 col-md-9">
                                 <label for="upload-image">Нове зображення</label>
                                 <input type="file" class="form-control" name="image" id="upload-image" accept="image/*">
                             </div>
-                            <div class="col-3">
-                                <button type="button" class="btn btn-primary" style="margin-top: 35px" id="upload-btn">Завантажити</button>
+                            <div class="col-12 col-md-3">
+                                <button type="button" class="btn btn-primary" style="margin-top: 35px" id="upload-btn" onclick="upload(' . "'post'" . ')">Завантажити</button>
                             </div>
                              
                           </div>
@@ -142,11 +142,11 @@ if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_GET['id'])){
                         <textarea class="form-control" name="text" id="text" rows="10" required></textarea>
                       </div>
                       <div class="form-group row">
-                        <div class="col-9">
+                        <div class="col-12 col-md-9">
                             <label for="upload-image">Зображення</label>
                             <input type="file" class="form-control" name="image" id="upload-image" accept="image/*">
                         </div>
-                        <div class="col-3">
+                        <div class="col-12 col-md-3">
                             <button type="button" class="btn btn-primary" style="margin-top: 35px" id="upload-btn">Завантажити</button>
                         </div>  
                       </div>

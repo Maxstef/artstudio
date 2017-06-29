@@ -7,10 +7,6 @@ if(!is_loged_in()){
     header('location: ../../y-admin');
 }
 
-if($_SERVER['REQUEST_METHOD'] === 'POST' && !isset($_POST['new-email'])){
-    
-}
-
 $conn = connect_to_db();       
 $sql = "SELECT * FROM post ORDER BY date";
 $result = $conn->query($sql);

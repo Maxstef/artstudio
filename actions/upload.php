@@ -7,7 +7,7 @@ if($_FILES['file']['size'] > 0 && is_loged_in()){
     $path_parts = pathinfo($_FILES['file']['name']);
     $_FILES['file']['name'] = md5($filename . time()) . '.' . $path_parts['extension'];
     $filename = $_FILES['file']['name'];
-    $uploaddir = '../uploaded/';
+    $uploaddir = '../uploaded/' . $_POST['destination'] . '/';
     $uploadfile = $uploaddir . basename($_FILES['file']['name']);
     if (move_uploaded_file($_FILES['file']['tmp_name'], $uploadfile)) {
         $im =    imagecreatefromjpeg($uploadfile);       

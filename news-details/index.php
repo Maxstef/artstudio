@@ -50,7 +50,7 @@ if(isset($_GET['id'])){
                 <div class="col-12 col-lg-9">
                     <div class="news-details">
                         <div class="news-details-img-wrapper">
-                            <img class="news-details-img" src="<?php echo "../uploaded/" . $photo;?>" alt="<?php echo $title . ' картинка'; ?>">
+                            <img class="news-details-img" src="<?php echo "../" . $post_photo_dir . $photo;?>" alt="<?php echo $title . ' картинка'; ?>">
                         </div>
                         <div class="news-details-title-wrapper">
                             <h1><?php echo $title;?></h1>
@@ -84,7 +84,7 @@ if(isset($_GET['id'])){
                                     <h6>Більше новин</h6>
                                 </div>
                                 <div class="more-news-image-wrapper">
-                                    <img src="<?php echo "../uploaded/" . $last_photo;?>" alt="<?php echo $last_title . ' картинка';?>">
+                                    <img src="<?php echo "../" . $post_photo_dir . $last_photo;?>" alt="<?php echo $last_title . ' картинка';?>">
                                 </div>
                                 <h6 style="margin: 0 10px;color:  black"><?php echo $last_title;?></h6>
                                 </a>

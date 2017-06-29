@@ -6,6 +6,8 @@ $db_config->username = "root";
 $db_config->password = "1313";
 $db_config->db = "artstudio";
 
+$post_photo_dir = '/uploaded/post/';
+
 $artstudio_email = 'casstefaks@gmail.com';
 
 $googleApiKey = 'AIzaSyD04rwZvl6eZOBMlArSQMNtJAG7DrKlXDM';

@@ -27,6 +27,7 @@ $('document').ready(function () {
         var file = document.getElementById('upload-image').files[0];
         var data = new FormData();
         data.append('file', file);
+        data.append('destination', 'post');
         if (typeof file == "undefined") {
             $("#no-file").fadeIn(300);
             return;
@@ -41,7 +42,7 @@ $('document').ready(function () {
             contentType: false,
             data: data,
             success: function (res) {
-                $("#uploaded-img").attr("src", "../../uploaded/" + res);
+                $("#uploaded-img").attr("src", "../../uploaded/post/" + res);
                 $("#success-upload").fadeIn(300);
                 $("#uploaded-image").remove();
                 if ($(".new-post-form").length) {
@@ -86,6 +87,35 @@ function publish_post(id){
         $.ajax({
             type: "POST",
             url: "../../actions/publish.php",
+            data: {
+                published: 1,
+                id: id
+            },
+            success: function (res) {
+                io.attr('checked', 'checked');
+            }
+        });
+    }
+}
+
+function publish_gallery(id){
+    var io = $("#gallery-" + id).find(".checkbox");
+    if(io.attr('checked') == 'checked'){
+        $.ajax({
+            type: "POST",
+            url: "../../actions/publish_gallery.php",
+            data: {
+                published: 0,
+                id: id
+            },
+            success: function (res) {
+                io.removeAttr('checked');
+            }
+        });  
+    } else {
+        $.ajax({
+            type: "POST",
+            url: "../../actions/publish_gallery.php",
             data: {
                 published: 1,
                 id: id
@@ -163,6 +193,12 @@ function confirmDeletePost(e){
 
 function confirmDeleteQuestion(e){
     if(!confirm('Ви впевнeні що хочете видалити питання?')){
+        e.preventDefault();
+    }
+}
+
+function confirmDeleteGallery(e){
+    if(!confirm('Ви впевнeні що хочете видалити галерею?')){
         e.preventDefault();
     }
 }

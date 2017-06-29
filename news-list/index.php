@@ -34,7 +34,7 @@ $result = $conn->query($sql);
                                             <a href='../news-details?id=$row[id]'>
                                             <div class='col-12 img-wrapper'>
                                                 <div class='painted-black'></div>
-                                                <img class='main-page-img' src='../uploaded/$row[photo]' alt='" . htmlspecialchars($row['title']) . " картинка'>
+                                                <img class='main-page-img' src='..$post_photo_dir$row[photo]' alt='" . htmlspecialchars($row['title']) . " картинка'>
                                                 <h3 class='main-page-item-title'>" . htmlspecialchars($row['title']) . "</h3>
                                             </div>
                                             <p class='main-page-item-text'>" . mb_substr(htmlspecialchars($row['text']), 0, 200) . '...' . "</p>

@@ -13,16 +13,16 @@
         <li class="nav-item <?php if($route == '/'){echo 'active';}?>">         
             <a class="nav-link" href="../">Головна</a>
         </li>
-        <li class="nav-item <?php if($route == '/teacher/'){echo 'active';}?>">
+        <li class="nav-item <?php if(strpos($route, '/teacher/') !== false){echo 'active';}?>">
             <a class="nav-link" href="../teacher">Викладачі</a>
         </li>
-        <li class="nav-item <?php if($route == '/news-list/'){echo 'active';}?>">
+        <li class="nav-item <?php if(strpos($route, '/news-list/') !== false){echo 'active';}?>">
             <a class="nav-link" href="../news-list">Новини</a>
         </li>
-        <li class="nav-item <?php if($route == '/question/'){echo 'active';}?>">
+        <li class="nav-item <?php if(strpos($route, '/question/') !== false){echo 'active';}?>">
             <a class="nav-link" href="../question">Питання</a>
         </li>
-        <li class="nav-item <?php if($route == '/contact/'){echo 'active';}?>">
+        <li class="nav-item <?php if(strpos($route, '/contact/') !== false){echo 'active';}?>">
             <a class="nav-link" href="../contact">Контакти</a>
         </li>
         

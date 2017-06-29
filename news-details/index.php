@@ -15,6 +15,7 @@ if(isset($_GET['id'])){
         $title = htmlspecialchars($row['title']);
         $photo = htmlspecialchars($row['photo']);
         $text = htmlspecialchars($row['text']);
+        $texts = explode("\n",$text);
         $date = htmlspecialchars($row['date']);
     }
 
@@ -58,7 +59,11 @@ if(isset($_GET['id'])){
                             <h5>Додано - <?php echo $date;?></h5>
                         </div>
                         <div class="news-details-text-wrapper">
-                            <p><?php echo $text;?></p>
+                            <?php
+                                foreach($texts as $p){
+                                    echo "<p>$p</p>";
+                                }
+                            ?>
                         </div>
                     </div>
                 </div>

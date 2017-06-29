@@ -188,7 +188,6 @@ function sendMessage(e){
     var name = $("#feedback-form-name").val();
     var contacts = $("#feedback-form-contacts").val();
     var message = $("#feedback-form-message").val();
-    console.log(name, contacts, message);
     $.ajax({
         type: "POST",
         url: "../../actions/new_question.php",
@@ -204,3 +203,27 @@ function sendMessage(e){
         }
     });
 }
+
+function sendMail(e){
+    e.preventDefault();
+    $("#mail-loader").fadeIn(300);
+    $("#mail-form-submit-btn").attr('disabled', 'disabled');
+    $("#mail-form-feedback").text('Виконується розсилка');
+    $("#mail-form-feedback").fadeIn(300);
+    var theme = $("#mail-form-contacts").val();
+    var message = $("#mail-form-message").val();
+    $.ajax({
+        type: "POST",
+        url: "../../actions/mail.php",
+        data: {
+            theme: name,
+            message: message
+        },
+        success: function (res) {
+            $("#mail-form-feedback").text(res);
+            $("#mail-form-feedback").fadeIn(300);
+            $("#mail-loader").fadeOut(300);
+        }
+    });
+}
+

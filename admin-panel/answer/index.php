@@ -68,7 +68,7 @@ if(isset($_GET['id'])){
                     Відповісти на питання
                 </h3>
             </div>
-            <div class="question">
+            <div class="container question">
                 <h5 class="bottom-divider" style="line-height: 1.3;"><?php echo $question;?></h5>
                 <p>Автор - <?php echo $author;?></p>
                 <p>Контакти - <?php echo $author_contacts;?></p>

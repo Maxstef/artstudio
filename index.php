@@ -4,7 +4,7 @@ require './config/config.php';
 require './shared/function.php';
 
 $conn = connect_to_db();
-$sql = "SELECT * FROM post WHERE published=1 AND on_main=1";
+$sql = "SELECT * FROM post WHERE published=1 AND on_main=1 ORDER BY date DESC";
 $result = $conn->query($sql);
 
 ?>

@@ -1,30 +1,3 @@
-<style>
-    #calendar {
-        margin:  auto;
-        height: 265px;
-    }
-    #calendar td{
-        color: #808080;
-        font-size: 16px;
-        padding: 2px 4px;
-        text-align: center;
-    }
-    #calendar tbody td:nth-child(n+6){
-        color: #ef8e8e;
-    }
-
-    #today {
-        color: white !important;
-        background-color: #ef8e8e;  
-        border-radius: 3px;
-    }
-    #calendar thead tr:nth-child(2) td:nth-child(1), #calendar thead tr:nth-child(2) td:nth-child(3){
-        cursor: pointer;
-        color: black !important;
-        font-size: 25px !important;
-        font-weight: 900 !important;
-    }
-</style>
 <div style="width:  100%; text-align: center">
     <table id="calendar">
         <thead>

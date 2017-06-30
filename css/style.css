@@ -302,6 +302,15 @@ body {
     opacity: 1;
 }
 
+/**********************************/
+/********** gallery  ************/
+/**********************************/
+
+.image-gallery {
+    width:  100%;
+    margin:  auto;
+}
+
 
 /**********************************/
 /********** footer  ************/
@@ -310,18 +319,38 @@ body {
 .footer {
   bottom: 0;
   width: 100%;
-  height: 60px;
   line-height: 60px;
   background-color: #d9534f;
   color: #fff;
-  padding-bottom: 120px;
+  padding-bottom: 10px;
   position: relative;
 }
 
-.footer-to-top {
-    position: absolute;
-    right: 40px;
-    bottom: -40px;
+.foooter-nav {
+    text-align: center;
+}
+
+.foooter-nav-nav {
+    padding: 0;
+    margin: 0;
+}
+
+.foooter-nav-item {
+    display: inline-block;
+    padding: 0 10px;
+}
+
+.foooter-nav-item a {
+    color:  white;
+}
+
+.footer-data{
+    display: block;
+    line-height: 1.5;
+}
+
+.pad-top {
+    padding-top: 20px;
 }
 
 /**********************************/
@@ -438,6 +467,14 @@ body {
     display: none;
 }
 
+.photo-white {
+    color:  white;
+    position: absolute;
+    cursor: pointer;
+    z-index: 10000;
+    opacity: 0;
+}
+
 .loader {
     border: 16px solid #f3f3f3; /* Light grey */
     border-top: 16px solid #3498db; /* Blue */
@@ -450,6 +487,36 @@ body {
 @keyframes spin {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
+}
+
+/**********************************/
+/********** calendar widget  ************/
+/**********************************/
+
+#calendar {
+    margin:  auto;
+    height: 265px;
+}
+#calendar td{
+    color: #808080;
+    font-size: 16px;
+    padding: 2px 4px;
+    text-align: center;
+}
+#calendar tbody td:nth-child(n+6){
+    color: #ef8e8e;
+}
+
+#today {
+    color: white !important;
+    background-color: #ef8e8e;  
+    border-radius: 3px;
+}
+#calendar thead tr:nth-child(2) td:nth-child(1), #calendar thead tr:nth-child(2) td:nth-child(3){
+    cursor: pointer;
+    color: black !important;
+    font-size: 25px !important;
+    font-weight: 900 !important;
 }
 
 
@@ -475,6 +542,16 @@ body {
 
     .dropdown-menu {
         left:  -100px;
+    }
+
+    .md-right {
+        text-align: right;
+    }
+
+    .image-gallery {
+        width: 80%;
+        display: block;
+        margin: auto;
     }
     
 }

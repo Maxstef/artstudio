@@ -8,7 +8,7 @@ if(!is_loged_in()){
 }
 
 $conn = connect_to_db();       
-$sql = "SELECT * FROM post ORDER BY date";
+$sql = "SELECT * FROM post ORDER BY date DESC";
 $result = $conn->query($sql);
 
 ?>

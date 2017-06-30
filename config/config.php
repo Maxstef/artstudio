@@ -17,3 +17,4 @@ $tel_number = "093-818-0351";
 $email = "casstefaks@gmail.com";
 $address = "м. Чернівці, вул. Тихоріцька 22";
 
+$domain_name = "localhost";

@@ -19,7 +19,7 @@ require '../config/config.php';
         
         <div class="container">
             <div class="breadcrumb">
-                <h2 class="title">Контакти</h2>
+                <h2 class="title">Контакти художньої студії</h2>
             </div>
             <div class="row">
                 <div class="col-12">

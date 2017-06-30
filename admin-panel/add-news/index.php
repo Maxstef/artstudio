@@ -147,7 +147,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_GET['id'])){
                             <input type="file" class="form-control" name="image" id="upload-image" accept="image/*">
                         </div>
                         <div class="col-12 col-md-3">
-                            <button type="button" class="btn btn-primary" style="margin-top: 35px" id="upload-btn">Завантажити</button>
+                            <button type="button" class="btn btn-primary" style="margin-top: 35px" id="upload-btn"  onclick="upload(' . "'post'" . ')">Завантажити</button>
                         </div>  
                       </div>
                       <p class="alert alert-danger" id="no-file">Виберіть файл для того щоб завантажити!</p>

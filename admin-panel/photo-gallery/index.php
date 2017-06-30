@@ -9,7 +9,7 @@ if(!is_loged_in()){
 }
 
 $conn = connect_to_db();       
-$sql = "SELECT * FROM gallery ORDER BY date";
+$sql = "SELECT * FROM gallery ORDER BY date DESC";
 $result = $conn->query($sql);
 
 ?>

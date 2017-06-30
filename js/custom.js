@@ -5,9 +5,13 @@ $('document').ready(function () {
     $(".main-page-item").hover(function () {
         var width = $(this).find('.main-page-img').width();
         var height = $(this).find('.main-page-img').height();
+        var pW = $(this).find('.photo-white').width();
+        var pH = $(this).find('.photo-white').height();
         $(this).find('.painted-black').css({ 'width': width + 'px', 'height': height + 'px', 'opacity': '0.4' });
+        $(this).find('.photo-white').css({ 'left': (width - pW)/2 + 'px', 'top': (height - pW)/2 + 'px', 'opacity': '1' });
     }, function () {
         $(this).find('.painted-black').css({ 'opacity': '0' });
+        $(this).find('.photo-white').css({ 'opacity': '0' });
     });
 
     $(".footer-to-top").on('click', function () {

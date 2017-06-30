@@ -19,6 +19,9 @@
         <li class="nav-item <?php if(strpos($route, '/news-list/') !== false){echo 'active';}?>">
             <a class="nav-link" href="../news-list">Новини</a>
         </li>
+        <li class="nav-item <?php if(strpos($route, '/gallery-list/') !== false){echo 'active';}?>">
+            <a class="nav-link" href="../gallery-list">Фотогалереї</a>
+        </li>
         <li class="nav-item <?php if(strpos($route, '/question/') !== false){echo 'active';}?>">
             <a class="nav-link" href="../question">Питання</a>
         </li>
